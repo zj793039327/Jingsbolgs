@@ -13,7 +13,7 @@ poststatus: publish
 
 [TOC]
 
-## 常用命令
+## Linux命令详解
 
 ### 如何编辑大文件?
 
@@ -72,7 +72,7 @@ sed是一个流编辑器，专门处理行文件，可以对一行或多行进�
 | jobs     | `jobs [-lrs]` 查看目前的job，`l` 同时列出PID, `r` 仅列出后台正在run的Job，  `s` 仅列出在后台stop的任务， `+` 表示最后被丢到后台的工作，也是`fg` 默认从后台取出的工作。`-` 表示倒数第二个被丢到后台的工作 |      |
 | fg       | `fg [%job number]` 将对应的jobnumber的任务返回前台，不给ID的话，默认取出最后一个，并且运行 |      |
 | bg       | `bg [%job number] ` 将指定的id的命令进入后台运行，`bg + / bg -` 将带有标记的命令进入执行 |      |
-| kill     | `kill -signal [%job number]\|PID`结束指定的进程 或者 job |      |
+| kill     | `kill -signal [%job number]PID`结束指定的进程 或者 job |      |
 |          |                                          |      |
 
 ### 关于压缩
@@ -82,6 +82,50 @@ sed是一个流编辑器，专门处理行文件，可以对一行或多行进�
 ```
 GZIP="-9" tar zcvf /home/homee.tgz /media
 ```
+
+### 常用命令
+
+#### lsof
+
+​	列出当前系统打开文件的工具，在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。
+
+​	当初使用到这个命令的场景主要是/tmp莫名其妙的被占满了，但是直接使用`du`、`ls`根本无法看到大文件，只有用`df`命令可以发现tmp已经使用100%。此时，使用lsof可以进一步进行调查。
+
+​	使用lsof命令的原因之一就是，当一个磁盘不能被卸载时，借助lsof这个命令我们可以轻易的识别哪些文件正在被占用。以下是常用的场景：
+
+1.   通过lsof命令列出打开的文件（可以针对特定用户）`lsof -u apache`
+
+2.   列出特定端口运行的进程
+
+     ```bash
+       # lsof -i TCP:53
+       COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+       named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
+       # lsof -i UDP:53
+       COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+       named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
+       # lsof -i:53
+       named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
+       named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
+     ```
+
+3.   列出ipv4以及ipv6的文件`lsof -i 4`
+
+4.   列出TCP端口范围1-1024端口`lsof -i TCP:1-1024`
+
+5.   通过脱字符排除某个用户`lsof -u^root`
+
+6.   查找特定用户使用的文件和命令`lsof -i -u apache `
+
+7.   列出所有网络连接`lsof -i`
+
+8.   杀死特定用户的所有活动```kill -9 `lsof -t -u named` ```
+
+9.   采用PID搜索`lsof -p 1`
+
+10.   恢复删除的文件
+
+     ​更加详细的使用，请查看[枯木的博文](http://kumu-linux.github.io/blog/2013/04/08/lsof/)
 
 ## Vim学习
 
