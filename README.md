@@ -5,7 +5,7 @@
 
 # page
 
-
+1. 2016-11-01 \[**linux_and_vim_and_emacs**\] [Linux 常用操作汇总](http://www.skydrift.cn/wordpress/linux_and_vim_and_emacs)
 
 # post
 
