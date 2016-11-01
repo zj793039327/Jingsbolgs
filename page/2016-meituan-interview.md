@@ -2,12 +2,12 @@ title: 2016美团面试经历
 date: 2016-04-05 08:20:20
 modified: 2016-04-05 08:20:20
 author: jojoster
-postid: $POSTID
-slug: $SLUG
+postid: 153
+slug: 153
 nicename: 2016-meituan-interview
 attachments: $ATTACHMENTS
 posttype: page
-poststatus: draft
+poststatus: publish
 
 这是一个雾霾的下午，我来到了美团的办公楼，开始了面试，不知怎么的，来之前，底气有些不足
 面的越多，就会越知道自己的不足吧。
