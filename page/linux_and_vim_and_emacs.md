@@ -63,6 +63,10 @@ sed是一个流编辑器，专门处理行文件，可以对一行或多行进�
 
  详细参考： [Linux命令大全](http://man.linuxde.net/sed)
 
+#### 操作示例
+
+* 打印文件中某一行，其中 p 是命令：`sed -n '49505,49505p' even_0.new.sql`
+
 ### bash的任务控制（job control）
 
 | 命令       | 说明                                       | 备注   |
@@ -98,15 +102,15 @@ GZIP="-9" tar zcvf /home/homee.tgz /media
 2.   列出特定端口运行的进程
 
      ```bash
-       # lsof -i TCP:53
-       COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-       named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
-       # lsof -i UDP:53
-       COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-       named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
-       # lsof -i:53
-       named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
-       named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
+         # lsof -i TCP:53
+         COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+         named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
+         # lsof -i UDP:53
+         COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+         named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
+         # lsof -i:53
+         named   16885 named   20u  IPv4  61664      0t0  TCP localhost:domain (LISTEN)
+         named   16885 named  512u  IPv4  61663      0t0  UDP localhost:domain
      ```
 
 3.   列出ipv4以及ipv6的文件`lsof -i 4`
@@ -125,7 +129,15 @@ GZIP="-9" tar zcvf /home/homee.tgz /media
 
 10.   恢复删除的文件
 
-     ​更加详细的使用，请查看[枯木的博文](http://kumu-linux.github.io/blog/2013/04/08/lsof/)
+      更加详细的使用，请查看[枯木的博文](http://kumu-linux.github.io/blog/2013/04/08/lsof/)
+
+#### awk
+
+* awk中打印 单引号：`\047`
+
+```bash
+awk "print \047$1" xxx.txt
+```
 
 ## Vim学习
 
