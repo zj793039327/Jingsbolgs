@@ -14,3 +14,5 @@
 1. 2016-10-31 \[**155**\] [《三体》和大刘的科幻](http://www.skydrift.cn/wordpress/post/155.htm)
 1. 2016-04-11 \[**158**\] [2016-58同城面试经历](http://www.skydrift.cn/wordpress/post/158.htm)
 1. 2016-10-31 \[**160**\] [2016美团面试经历](http://www.skydrift.cn/wordpress/post/160.htm)
+1. 2016-11-14 \[**169**\] [大数据系统性能分析](http://www.skydrift.cn/wordpress/post/169.htm)
+1. 2016-11-21 \[**192**\] [redis知识点](http://www.skydrift.cn/wordpress/post/192.htm)
