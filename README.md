@@ -16,3 +16,4 @@
 1. 2016-10-31 \[**160**\] [2016美团面试经历](http://www.skydrift.cn/wordpress/post/160.htm)
 1. 2016-11-14 \[**169**\] [大数据系统性能分析](http://www.skydrift.cn/wordpress/post/169.htm)
 1. 2016-11-21 \[**192**\] [redis知识点](http://www.skydrift.cn/wordpress/post/192.htm)
+1. 2016-11-23 \[**195**\] [Java线程安全-《深入了解Java虚拟机》读书笔记](http://www.skydrift.cn/wordpress/post/195.htm)
