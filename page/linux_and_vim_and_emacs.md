@@ -76,7 +76,7 @@ sed是一个流编辑器，专门处理行文件，可以对一行或多行进�
 | jobs     | `jobs [-lrs]` 查看目前的job，`l` 同时列出PID, `r` 仅列出后台正在run的Job，  `s` 仅列出在后台stop的任务， `+` 表示最后被丢到后台的工作，也是`fg` 默认从后台取出的工作。`-` 表示倒数第二个被丢到后台的工作 |      |
 | fg       | `fg [%job number]` 将对应的jobnumber的任务返回前台，不给ID的话，默认取出最后一个，并且运行 |      |
 | bg       | `bg [%job number] ` 将指定的id的命令进入后台运行，`bg + / bg -` 将带有标记的命令进入执行 |      |
-| kill     | `kill -signal [%job number]PID`结束指定的进程 或者 job |      |
+| kill     | `kill -signal [%job number]\|PID`结束指定的进程 或者 job |      |
 |          |                                          |      |
 
 ### 关于压缩
@@ -117,6 +117,8 @@ GZIP="-9" tar zcvf /home/homee.tgz /media
 
 4.   列出TCP端口范围1-1024端口`lsof -i TCP:1-1024`
 
+     1.   lsof -i:8117 查询端口
+
 5.   通过脱字符排除某个用户`lsof -u^root`
 
 6.   查找特定用户使用的文件和命令`lsof -i -u apache `
@@ -129,7 +131,7 @@ GZIP="-9" tar zcvf /home/homee.tgz /media
 
 10.   恢复删除的文件
 
-      更加详细的使用，请查看[枯木的博文](http://kumu-linux.github.io/blog/2013/04/08/lsof/)
+     更加详细的使用，请查看[枯木的博文](http://kumu-linux.github.io/blog/2013/04/08/lsof/)
 
 #### awk
 
